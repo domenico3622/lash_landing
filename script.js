@@ -36,7 +36,10 @@ const heroVisual = document.querySelector('.hero-visual');
 window.addEventListener('scroll', () => {
   if (!heroVisual) return;
   const y = Math.min(window.scrollY, 600);
-  heroVisual.style.transform = `translateY(${y * .2}px) perspective(1000px) rotateY(${y * .06}deg)`;
+  const isMobile = window.innerWidth < 801;
+  const translateFactor = isMobile ? .08 : .2;
+  const rotationFactor = isMobile ? .03 : .014;
+  heroVisual.style.transform = `translateY(${y * translateFactor}px) perspective(1000px) rotateY(${y * rotationFactor}deg)`;
 }, {passive:true});
 
 document.querySelectorAll('.service').forEach(item => {
