@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
   if (!heroVisual) return;
   const y = Math.min(window.scrollY, 600);
   const isMobile = window.innerWidth < 801;
-  const translateFactor = isMobile ? .12 : .2;
+  const translateFactor = isMobile ? .14 : .2;
   const rotationFactor = isMobile ? .3 : .3;
   heroVisual.style.transform = `translateY(${y * translateFactor}px) perspective(1000px) rotateY(${y * rotationFactor}deg)`;
 }, {passive:true});
